@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {fetch} from "@tauri-apps/api/http";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
+import Users from "./components/Users";
 import "./App.css";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
+  const [data, setData] = useState([]);
+
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/users').then(res=>console.log(res))
+  })
+
+  Users()
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
@@ -46,6 +55,7 @@ function App() {
         </form>
       </div>
       <p>{greetMsg}</p>
+      <Users />
     </div>
   );
 }

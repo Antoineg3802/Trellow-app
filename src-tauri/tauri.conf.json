@@ -16,6 +16,11 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["https://jsonplaceholder.typicode.com/*"]
       }
     },
     "bundle": {
@@ -27,7 +32,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.tauri.monapplication",
       "targets": "all"
     },
     "security": {
