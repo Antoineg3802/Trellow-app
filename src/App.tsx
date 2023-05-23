@@ -10,12 +10,6 @@ function App() {
   const [name, setName] = useState("");
   const [data, setData] = useState([]);
 
-  useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/users').then(res=>console.log(res))
-  })
-
-  Users()
-
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
     setGreetMsg(await invoke("greet", { name }));
