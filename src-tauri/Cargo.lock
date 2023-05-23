@@ -1499,7 +1499,6 @@ dependencies = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "native-tls"
 version = "0.2.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1518,8 +1517,6 @@ dependencies = [
 ]
 
 [[package]]
-=======
->>>>>>> 5d69f29e7327d21daf150ea58b269a9fed2b2211
 name = "ndk"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1684,7 +1681,6 @@ dependencies = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "openssl"
 version = "0.10.52"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1729,8 +1725,6 @@ dependencies = [
 ]
 
 [[package]]
-=======
->>>>>>> 5d69f29e7327d21daf150ea58b269a9fed2b2211
 name = "overload"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2220,7 +2214,6 @@ dependencies = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "schannel"
 version = "0.1.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2230,8 +2223,6 @@ dependencies = [
 ]
 
 [[package]]
-=======
->>>>>>> 5d69f29e7327d21daf150ea58b269a9fed2b2211
 name = "scoped-tls"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2244,7 +2235,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd"
 
 [[package]]
-<<<<<<< HEAD
 name = "security-framework"
 version = "2.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2268,8 +2258,6 @@ dependencies = [
 ]
 
 [[package]]
-=======
->>>>>>> 5d69f29e7327d21daf150ea58b269a9fed2b2211
 name = "selectors"
 version = "0.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2350,7 +2338,6 @@ dependencies = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "serde_urlencoded"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2363,8 +2350,6 @@ dependencies = [
 ]
 
 [[package]]
-=======
->>>>>>> 5d69f29e7327d21daf150ea58b269a9fed2b2211
 name = "serde_with"
 version = "2.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2676,10 +2661,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d42ba3a2e8556722f31336a0750c10dbb6a81396a1c452977f515da83f69f842"
 dependencies = [
  "anyhow",
-<<<<<<< HEAD
  "attohttpc",
-=======
->>>>>>> 5d69f29e7327d21daf150ea58b269a9fed2b2211
  "cocoa",
  "dirs-next",
  "embed_plist",
@@ -3138,15 +3120,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "830b7e5d4d90034032940e4ace0d9a9a057e7a45cd94e6c007832e39edb82f6d"
 
 [[package]]
-<<<<<<< HEAD
 name = "vcpkg"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
 
 [[package]]
-=======
->>>>>>> 5d69f29e7327d21daf150ea58b269a9fed2b2211
 name = "version-compare"
 version = "0.0.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
