@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "Trellow",
-    "version": "0.0.0"
+    "version": "1.1.0"
   },
   "tauri": {
     "allowlist": {
@@ -20,7 +20,7 @@
       "http": {
         "all": true,
         "request": true,
-        "scope": ["https://jsonplaceholder.typicode.com/*"]
+        "scope": ["https://jsonplaceholder.typicode.com/*","http://127.0.0.1:8000/api/*"]
       }
     },
     "bundle": {
@@ -30,7 +30,7 @@
         "icons/128x128.png",
         "icons/128x128@2x.png",
         "icons/icon.icns",
-        "icons/icon.ico"
+        "icons/Trellow_logo.ico"
       ],
       "identifier": "com.tauri.monapplication",
       "targets": "all"
@@ -46,8 +46,8 @@
         "fullscreen": false,
         "resizable": true,
         "title": "Trellow",
-        "width": 800,
-        "height": 600
+        "width": 1100,
+        "height": 700
       }
     ]
   }

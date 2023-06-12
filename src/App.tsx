@@ -1,55 +1,66 @@
 import { useEffect, useState } from "react";
-import {fetch} from "@tauri-apps/api/http";
+import { fetch } from "@tauri-apps/api/http";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 import Users from "./components/Users";
 import "./App.css";
+import { useCookies } from "react-cookie";
+import getAuth from "./services/authServices";
+import AUTH from "./data/auth";
+import SignUp from "./components/Test";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
-  const [data, setData] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cookies, setCookie] = useCookies(['access_token', 'refresh_token'])
+  const [auth, setAuth] = useState<AUTH>();
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    setGreetMsg(await invoke("greet", { name }));
-  }
+  //   const handle = () => {
+  //     setCookie('JWT', jwt, { path: '/' });
+  //  };
+
+
 
   return (
     <div className="container">
-      <h1>Welcome to Tauri!</h1>
+      <h1>Bienvenue sur Trellow</h1>
 
       <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a>
+          <img src="/Trellow_logo.png" className="logo vite" alt="Trellow" />
         </a>
       </div>
 
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
+      <p>Merci de vous authentifier pour accéder à vos tableaux.</p>
 
-      <div className="row">
+      <div className="">
         <form
           onSubmit={(e) => {
+            let expires = new Date()
+            expires.setTime(expires.getTime() + (60 * 60 * 1000))
             e.preventDefault();
-            greet();
+            getAuth(email, password).then((auth) => {
+              setAuth(auth);
+              setCookie('access_token', auth?.token, { path: '/', expires })
+              setCookie('refresh_token', auth?.refresh_token, { path: '/', expires })
+            });
           }}
+
         >
           <input
             id="greet-input"
-            onChange={(e) => setName(e.currentTarget.value)}
-            placeholder="Enter a name..."
+            onChange={(e) => setEmail(e.currentTarget.value)}
+            placeholder="Email"
           />
-          <button type="submit">Greet</button>
+          <input
+            id="greet-input"
+            onChange={(e) => setPassword(e.currentTarget.value)}
+            placeholder="Mot de passe"
+          />
+          <button type="submit">Valider</button>
         </form>
       </div>
-      <p>{greetMsg}</p>
-      <Users />
+      {/* <Users /> */}
     </div>
   );
 }
