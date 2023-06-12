@@ -1,5 +1,4 @@
 import AUTH from '../data/auth';
-import USER from '../data/user'
 import { Body, getClient, ResponseType } from '@tauri-apps/api/http'
 
 const getAuth = (email : string, password : string): Promise<AUTH> => {
@@ -15,7 +14,6 @@ const getAuth = (email : string, password : string): Promise<AUTH> => {
                 responseType: ResponseType.JSON,
             })
             .then((res) => {
-                // console.log(res.data, typeof res.data);
                 let auth: AUTH = res.data;
                 resolve(auth)
             });
