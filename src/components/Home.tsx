@@ -10,27 +10,27 @@ const Home = () => {
     const [data, setData] = useState<Boards>();
 
     useEffect(() => {
+
+        let ignore = false
+
         getBoardsUser(cookies.access_token).then((boards) => {
-            setData(boards);
+            if (!ignore)
+                setData(boards);
         });
     }, []);
 
 
     return (
         <div className="container">
-            <h1>Home</h1>
-
-            <div className="row">
-                <a href={`/`}>
-                    <img src="/Trellow_logo.png" className="logo trellow" alt="Trellow" />
-                </a>
-            </div>
+            <h1>Mes tableaux</h1>
             <div>
                 {data?.board.map((board) => (
                     <div key={board.board.id}>
-                        <h3>{board.board.title}</h3>
-                        <p>{board.board.hash}</p>
-                        <p>{board.role}</p>
+                        <a href={"/board/" + board.board.id}>
+                            <h3>{board.board.title}</h3>
+                            <p>{board.board.hash}</p>
+                            <p>{board.role}</p>
+                        </a>
                     </div>
                 ))}
             </div>
