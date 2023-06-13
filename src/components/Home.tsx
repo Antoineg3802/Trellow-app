@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import AUTH from "../data/auth";
 import { BOARDS } from "../data/boards";
-import getBoardsUser from "../services/boardServices";
+import { getBoardsUser } from "../services/boardServices";
 
 const Home = () => {
     const [cookies] = useCookies(['access_token', 'refresh_token'])

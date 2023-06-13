@@ -2,7 +2,7 @@ import {getClient, ResponseType} from '@tauri-apps/api/http'
 import { BOARDS } from '../data/boards';
 import { useCookies } from 'react-cookie';
 
-const getBoardsUser = (token: string): Promise<BOARDS> => {
+export const getBoardsUser = (token: string): Promise<BOARDS> => {
     return new Promise (async(resolve) => {
         const client = await getClient();
 		client
@@ -17,5 +17,3 @@ const getBoardsUser = (token: string): Promise<BOARDS> => {
 			});
     })
 }
-
-export default getBoardsUser;

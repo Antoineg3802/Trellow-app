@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import getAuth from "../services/authServices";
+
 import AUTH from "../data/auth";
+import { getAuth } from "../services/authServices";
 
 const Login = () => {
     const [email, setEmail] = useState("");
