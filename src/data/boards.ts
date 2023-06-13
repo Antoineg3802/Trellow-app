@@ -1,13 +1,13 @@
-export interface BOARDS {
-    board: BOARD[]
+export interface Boards {
+    board: Board[]
 }
 
-export interface BOARD {
-    board: BOARDINFO
+export interface Board {
+    board: BoardInfo
     role: string
 }
 
-export interface BOARDINFO {
+export interface BoardInfo {
     id: number
     title: string
     hash: string

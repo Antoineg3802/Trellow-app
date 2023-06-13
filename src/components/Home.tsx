@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import AUTH from "../data/auth";
-import { BOARDS } from "../data/boards";
 import { getBoardsUser } from "../services/boardServices";
+import { Boards } from "../data/boards";
 
 const Home = () => {
     const [cookies] = useCookies(['access_token', 'refresh_token'])
     const [auth, setAuth] = useState<AUTH>();
-    const [data, setData] = useState<BOARDS>();
+    const [data, setData] = useState<Boards>();
 
     useEffect(() => {
         getBoardsUser(cookies.access_token).then((boards) => {
