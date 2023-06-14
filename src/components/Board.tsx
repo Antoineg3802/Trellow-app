@@ -28,9 +28,6 @@ const Board = () => {
         <div className="container">
             <h1>{board?.title}</h1>
             <div>
-                <p>{board?.hash}</p>
-                <p>{board?.id}</p>
-                <p>{board?.title}</p>
                 {board?.board_columns.map((column) =>(
                     <Column key={column.id} column={column} />
                 ))}
