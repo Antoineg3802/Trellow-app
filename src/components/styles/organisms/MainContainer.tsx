@@ -1,7 +1,8 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const MainContainer = createGlobalStyle`
-    body{
-        background-color : #F3DFC1
+    html{
+        background-color : #fff;
+        font-family: helvetica, arial, sans-serif;
     }
 `;

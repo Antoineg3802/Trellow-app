@@ -7,8 +7,10 @@ margin-right: 1rem;
 margin-bottom: 1rem;
 margin-top: 1rem;
 padding: 1rem;
-box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
+background-color: #4bbbe1;
+position: relative;
 &:hover{
-    border: 1px solid #fff;
+    box-shadow: 20px 20px 30px rgb(75, 187, 225, 0.2);
+    background-color: #fff;
 }
 `

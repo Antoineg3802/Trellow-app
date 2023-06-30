@@ -34,9 +34,9 @@ const Home = () => {
                 {data?.board.map((board) => (
                     <BoardCard key={board.board.id} >
                         <LinkToBoard href={"/board/" + board.board.id}>
-                            <H3>{board.board.title}</H3>
-                            <DisplayUserLevel>{board.role}</DisplayUserLevel>
+                            <H2>{board.board.title}</H2>
                         </LinkToBoard>
+                        <DisplayUserLevel>{board.role}</DisplayUserLevel>
                     </BoardCard>
                 ))}
             </BoardAllCards>
