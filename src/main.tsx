@@ -16,7 +16,7 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 import Board from "./components/Board";
 
-import { MainContainer } from "./components/styles/organisms/MainContainer"
+import { MainContainerStyle } from "./components/styles/addons/MainContainerStyle"
 
 const router = createBrowserRouter([
   { path: "/", element: <Login /> },
@@ -29,7 +29,7 @@ const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <>
-    <MainContainer/>
+    <MainContainerStyle/>
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />

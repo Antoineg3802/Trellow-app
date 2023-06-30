@@ -10,7 +10,6 @@ import { DisplayUserLevel } from './styles/atoms/Span';
 import { LinkToBoard } from './styles/atoms/Link';
 import { BoardCard } from './styles/molecules/BoardCard';
 import { BoardAllCards } from "./styles/organisms/BordAllCards";
-import { MainContainer } from "./styles/organisms/MainContainer"
 
 const Home = () => {
     const [cookies] = useCookies(['access_token', 'refresh_token'])
