@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { OneBoard } from '../data/oneBoard';
 import { useCookies } from 'react-cookie';
 import Column from './Column';
+import { MainTitle } from './styles/atoms/Titles';
+
 
 const Board = () => {
     const [cookies] = useCookies(['access_token', 'refresh_token'])
@@ -26,7 +28,7 @@ const Board = () => {
 
     return (
         <div className="container">
-            <h1>{board?.title}</h1>
+            <MainTitle>{board?.title}</MainTitle>
             <div>
                 {board?.board_columns.map((column) =>(
                     <Column key={column.id} column={column} />
