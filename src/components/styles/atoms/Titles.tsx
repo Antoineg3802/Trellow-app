@@ -20,5 +20,7 @@ color: black;
 `
 
 export const TitleBoard = styled.h1`
+`
 
+export const ColumnTitles = styled.h2`
 `

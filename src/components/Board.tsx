@@ -8,7 +8,6 @@ import Column from './Column';
 import { TitleBoard } from './styles/atoms/Titles';
 import { BoardContainer } from './styles/atoms/Containers'
 
-
 const Board = () => {
     const [cookies] = useCookies(['access_token', 'refresh_token'])
     let boardId: number = +useParams().boardId!;

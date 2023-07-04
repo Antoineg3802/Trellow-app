@@ -7,4 +7,3 @@ export interface TicketInfo {
     creation_date: string
     expiration_date: string
   }
-  
