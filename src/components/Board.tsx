@@ -1,10 +1,12 @@
 import { useParams } from 'react-router-dom';
-import { getOneBoards } from "../services/boardServices";
 import { useEffect, useState } from "react";
-import { OneBoard } from '../data/oneBoard';
 import { useCookies } from 'react-cookie';
+
+import { getOneBoards } from "../services/boardServices";
+import { OneBoard } from '../data/oneBoard';
 import Column from './Column';
-import { MainTitle } from './styles/atoms/Titles';
+import { TitleBoard } from './styles/atoms/Titles';
+import { BoardContainer } from './styles/atoms/Containers'
 
 
 const Board = () => {
@@ -28,12 +30,12 @@ const Board = () => {
 
     return (
         <div className="container">
-            <MainTitle>{board?.title}</MainTitle>
-            <div>
+            <TitleBoard>{board?.title}</TitleBoard>
+            <BoardContainer>
                 {board?.board_columns.map((column) =>(
                     <Column key={column.id} column={column} />
                 ))}
-            </div>
+            </BoardContainer>
             <br />
             {/* {board?.users.map((user)=>(
                 <div key={user.user.id}>

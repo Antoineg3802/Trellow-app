@@ -18,3 +18,7 @@ ${BoardCard}:hover & {
 export const H3 = styled.h3`
 color: black;   
 `
+
+export const TitleBoard = styled.h1`
+
+`
