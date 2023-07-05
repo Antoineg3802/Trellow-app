@@ -9,7 +9,7 @@ import { TitleBoard } from './styles/atoms/Titles';
 import { BoardContainer } from './styles/atoms/Containers'
 import { FullPageContainer } from './styles/organisms/FullPageContainer';
 
-const Board = () => {
+const Board = (doUserCan : boolean) => {
     const [cookies] = useCookies(['access_token', 'refresh_token'])
     let boardId: number = +useParams().boardId!;
 

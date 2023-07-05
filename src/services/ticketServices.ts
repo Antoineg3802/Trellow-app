@@ -1,7 +1,7 @@
 import { Body, ResponseType, getClient } from "@tauri-apps/api/http";
 import { TicketInfo } from "../data/ticket";
 
-export const createTicket = (token: string,columnId:number, text: string, expiration_date: Date): Promise<Boolean> => {
+export const createTicket = (token: string,columnId:number, text: string, expiration_date: String): Promise<Boolean> => {
 	return new Promise(async (resolve) => {
 		const client = await getClient();
 		client
@@ -16,6 +16,7 @@ export const createTicket = (token: string,columnId:number, text: string, expira
 			})
 			.then((res) => {
 				console.log(res.status)
+				console.log(res.data)
 				if (res.status == 201) {
 					resolve(true)
 				} else {
