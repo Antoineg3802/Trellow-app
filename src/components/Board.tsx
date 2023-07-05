@@ -7,6 +7,7 @@ import { OneBoard } from '../data/oneBoard';
 import Column from './Column';
 import { TitleBoard } from './styles/atoms/Titles';
 import { BoardContainer } from './styles/atoms/Containers'
+import { FullPageContainer } from './styles/organisms/FullPageContainer';
 
 const Board = () => {
     const [cookies] = useCookies(['access_token', 'refresh_token'])
@@ -28,7 +29,7 @@ const Board = () => {
     }, [])
 
     return (
-        <div className="container">
+        <FullPageContainer>
             <TitleBoard>{board?.title}</TitleBoard>
             <BoardContainer>
                 {board?.board_columns.map((column) =>(
@@ -42,7 +43,7 @@ const Board = () => {
                     <p>{user.user.email}</p>
                 </div>
             ))} */}
-        </div>
+        </FullPageContainer>
     ) 
 }
 

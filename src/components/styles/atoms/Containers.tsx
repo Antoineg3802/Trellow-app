@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const BoardContainer = styled.div`
 display: flex;
 gap: 1vw;
-height: 100%;
+height: 80vh;
 border-radius : 2vw;
 padding : 2vw;
 background-color: #4bbbe1;
@@ -16,13 +16,22 @@ width: fit-content;
 padding: 2vw;
 `
 
-export const TicketContainer = styled.div`
-background-color: #fff;
-padding: 1vw;
-border: 1px solid black;
-`
-
 export const BoardColumnContainer = styled.div`
 background-color: #fff;
-width: 20vw
+width: 20vw;
+height: 70vh;
+border-radius : 1vw;
+padding: 1vw;
+`
+
+export const ErrorDivDisplay = styled.div`
+background-color:red;
+color: white;
+`
+
+export const TicketsContainer = styled.div`
+max-height: 60vh;
+overflow: auto;
+scrollbar-width: thin;
+scrollbar-color: transparent transparent;
 `

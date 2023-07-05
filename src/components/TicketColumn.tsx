@@ -1,5 +1,5 @@
 import { Ticket } from "../data/oneBoard"
-import { TicketContainer } from "./styles/organisms/TicketContainer"
+import { TicketContainer } from "./styles/molecules/TicketContainer"
 
 interface TicketProps{
     ticket : Ticket
@@ -7,15 +7,20 @@ interface TicketProps{
 
 const TicketColumn = ({ticket} : TicketProps) =>{
 
+    const dateTS = new Date(ticket.expiration_date);
+    const jour = dateTS.getDate().toString().padStart(2, '0');
+    const mois = (dateTS.getMonth() + 1).toString().padStart(2, '0');
+    const annee = dateTS.getFullYear().toString();
+    const heure = dateTS.getHours().toString().padStart(2, '0');
+    const minute = dateTS.getMinutes().toString().padStart(2, '0');
+
+    const dateFormatee = `${jour}/${mois}/${annee} ${heure}:${minute}`;
+
     return (
-        <TicketContainer>
-            <li>
-                <div>
-                    <h3>{ticket.text}</h3>
-                    <p>{ticket.expiration_date}</p>
-                </div>
-            </li>
-        </TicketContainer>
+        <div>
+            <h3>{ticket.text}</h3>
+            <p>{dateFormatee}</p>
+        </div>
     )
 }
 

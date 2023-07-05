@@ -25,7 +25,7 @@ export const createTicket = (token: string,columnId:number, text: string, expira
 	})
 }
 
-export const editTicket = (token: string, id: string, field: Partial<{text: string, expiration_date: Date, columnReference: number}>): Promise<Boolean> => {
+export const editTicket = (token: string, id: string, field: Partial<{text: string, position: number, expiration_date: Date, columnReference: number}>): Promise<Boolean> => {
 	return new Promise(async (resolve) => {
 		const client = await getClient();
 		client
