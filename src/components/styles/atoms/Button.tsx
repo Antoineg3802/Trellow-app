@@ -37,3 +37,9 @@ height: 5vh;
     background-color: #fff;
 }
 `
+
+// export const TicketButton = styled.button`
+// border: none;
+// box-shadow: none;
+// width: 100%;
+// `

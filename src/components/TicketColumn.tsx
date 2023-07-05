@@ -18,7 +18,7 @@ const TicketColumn = ({ticket} : TicketProps) =>{
 
     return (
         <div>
-            <h3>{ticket.text}</h3>
+            <h3>{ticket.title}</h3>
             <p>{dateFormatee}</p>
         </div>
     )

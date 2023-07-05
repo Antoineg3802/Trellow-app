@@ -1,13 +1,15 @@
 import { Body, ResponseType, getClient } from "@tauri-apps/api/http";
 import { TicketInfo } from "../data/ticket";
 
-export const createTicket = (token: string,columnId:number, text: string, expiration_date: String): Promise<Boolean> => {
+export const createTicket = (token: string,columnId:number,title:string, text: string, expiration_date: String, position:number): Promise<Boolean> => {
 	return new Promise(async (resolve) => {
 		const client = await getClient();
 		client
 			.post<Boolean>(`http://127.0.0.1:8000/api/ticket/${columnId}`,
 				Body.json({
+					position:position,
 					text: text,
+					title: title,
                     expiration_date: expiration_date
 				}), {
 				timeout: 30,

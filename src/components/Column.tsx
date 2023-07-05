@@ -43,8 +43,6 @@ const Column = ({column} : ColumnProps) => {
         const seconds = String(date.getUTCSeconds()).padStart(2, '0');
         const timezoneOffset = date.getTimezoneOffset();
         const timezoneOffsetHours = Math.abs(Math.floor(timezoneOffset / 60)).toString().padStart(2, '0');
-        const timezoneOffsetMinutes = (Math.abs(timezoneOffset) % 60).toString().padStart(2, '0');
-        const timezoneSign = timezoneOffset < 0 ? '+' : '-';
 
         return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}+${timezoneOffsetHours}`;
     };
@@ -57,7 +55,7 @@ const Column = ({column} : ColumnProps) => {
 
         const columnId = formData.get('columnId') as string
 
-        createTicket(cookies.access_token, parseInt(columnId), cardTitle, formatDate(date))
+        createTicket(cookies.access_token, parseInt(columnId), cardTitle, 'tutu', formatDate(date), ticketOrder.length)
 
         setShowPopup(false);
     };

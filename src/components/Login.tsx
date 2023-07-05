@@ -41,11 +41,12 @@ const Login = () => {
                     <input
                         id="greet-input"
                         onChange={(e) => setEmail(e.currentTarget.value)}
-                        placeholder="Email"
+                        placeholder="Identifiant"
                     />
                     <input
                         id="greet-input"
                         onChange={(e) => setPassword(e.currentTarget.value)}
+                        type="password"
                         placeholder="Mot de passe"
                     />
                     <button type="submit">Valider</button>

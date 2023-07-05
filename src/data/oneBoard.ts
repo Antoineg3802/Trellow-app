@@ -15,6 +15,7 @@ export interface OneBoard {
   export interface Ticket {
     id: number
     position: number
+    title: string
     text: string
     expiration_date: string
   }
