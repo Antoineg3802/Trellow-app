@@ -94,3 +94,58 @@ si vous avez un probléme vous pouvez vous referencer a la [documentation offici
 Le fichier de configuration principal de Tauri se trouve dans le répertoire `src-tauri/tauri.conf.js`. Vous pouvez y modifier différents paramètres pour adapter votre application.
 
 Pour plus de détails sur la configuration de Tauri, vous pouvez consulter la [documentation officielle de Tauri](https://tauri.studio/docs/getting-started/intro).
+
+
+## Fonctionnalités 
+
+Concernant la partie React, nous allons vous présenter les librairies  principales de notre application. 
+
+### Styled components
+
+Les styled components sont une librairie qui permet de créer des composants de style personnalisé. C'est une façon de faire du style avec React. Le principe ? Faire un composant avec les styled components permet de :
+
+- Décomposer les composants et créer de l'atomicité (réduire les composants au plus petit afin de faciliter la compréhension et la maintenabilité du code).
+- Effectuer du style SCSS ou CSS pour chaque composant.
+- Effectuer du code via les attributs.
+- Éviter la répétition du code.
+
+Présentons un exemple. Dans notre cas nous aimerions créer un style de bouton de même style mais de couleur différente en fonction de la situation. Créons le styled components : 
+```tsx
+import styled from "styled-components";
+
+export const Button = styled.button`
+margin-top: 20px;
+color: ${props=>props.color};
+border: 1px solid grey ;
+width: 100%;
+border-radius : 1vw;
+&:hover{
+    cursor: pointer;
+}
+`
+```
+Dans le code ci dessous, nous créeons un style component de type bouton avec `export const Button = styled.button`. Pour bien montrer le fait que nous pouvons interagir avec les données de style nous récupérons les propriétés via `color: ${props=>props.color}`. Nous apppliquons donc la couleur passée en propriété à l'attribut "color"
+
+Pour appeler notre composant stylisé, nous devrions faire comme ceci 
+```tsx
+// Import du composant
+import { AddCard } from './styles/atoms/Button'
+
+const Home = () => {
+    return (
+        <div className="container" id="home-container">
+            {/* Appel du composant bouton avec le paramètre blue ou red ansi que le text du bouton */}
+            <Button color="blue">Mon Bouton 1</Button>
+            <Button color="red">Mon Bouton 2</Button>
+        </div>
+    )
+}
+
+```
+Et voilà vous savez utiliser les styled components. Pour en savoir plus rendez-vous sur https://styled-components.com/
+
+### React-beautiful-dnd
+
+Concernant cette librairie, elle permet de faire du "drag and drop" de card. Elle fonctionne comme ceci ![](image.png)
+
+__Attention :__ Á l'heure ou j'écris ceci la librairie n'est pas compatible avec le strict-mode de React et cela rend le package inutilisable avec celui-ci d'activé.
