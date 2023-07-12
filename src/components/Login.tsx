@@ -16,7 +16,7 @@ const Login = () => {
 
             <div className="row">
                 <a>
-                    <img src="/Trellow_logo.png" className="logo trellow" alt="Trellow" />
+                    <img src="/assets/Trellow_logo.png" className="logo trellow" alt="Trellow" />
                 </a>
             </div>
             <h2>Connection</h2>
@@ -41,11 +41,12 @@ const Login = () => {
                     <input
                         id="greet-input"
                         onChange={(e) => setEmail(e.currentTarget.value)}
-                        placeholder="Email"
+                        placeholder="Identifiant"
                     />
                     <input
                         id="greet-input"
                         onChange={(e) => setPassword(e.currentTarget.value)}
+                        type="password"
                         placeholder="Mot de passe"
                     />
                     <button type="submit">Valider</button>

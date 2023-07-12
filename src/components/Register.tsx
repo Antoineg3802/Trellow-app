@@ -15,7 +15,7 @@ const Register = () => {
 
             <div className="row">
                 <a>
-                    <img src="/Trellow_logo.png" className="logo trellow" alt="Trellow" />
+                    <img src="/assets/Trellow_logo.png" className="logo trellow" alt="Trellow" />
                 </a>
             </div>
             <h2>Creation du compte</h2>

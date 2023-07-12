@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+
 import AUTH from "../data/auth";
 import { getBoardsUser } from "../services/boardServices";
 import { Boards } from "../data/boards";
+
+import {MainTitle, H2, H3} from './styles/atoms/Titles';
+import { DisplayUserLevel } from './styles/atoms/Span';
+import { LinkToBoard } from './styles/atoms/Link';
+import { BoardCard } from './styles/molecules/BoardCard';
+import { BoardAllCards } from "./styles/organisms/BordAllCards";
 
 const Home = () => {
     const [cookies] = useCookies(['access_token', 'refresh_token'])
@@ -10,32 +17,31 @@ const Home = () => {
     const [data, setData] = useState<Boards>();
 
     useEffect(() => {
+
+        let ignore = false
+
         getBoardsUser(cookies.access_token).then((boards) => {
-            setData(boards);
+            if (!ignore)
+                setData(boards);
         });
     }, []);
 
-
     return (
-        <div className="container">
-            <h1>Home</h1>
-
-            <div className="row">
-                <a href={`/`}>
-                    <img src="/Trellow_logo.png" className="logo trellow" alt="Trellow" />
-                </a>
-            </div>
-            <div>
+        <div className="container" id="home-container">
+            <MainTitle color="red">Mes tableaux</MainTitle>
+            <BoardAllCards>
                 {data?.board.map((board) => (
-                    <div key={board.board.id}>
-                        <h3>{board.board.title}</h3>
-                        <p>{board.board.hash}</p>
-                        <p>{board.role}</p>
-                    </div>
+                    <BoardCard key={board.board.id} >
+                        <LinkToBoard href={"/board/" + board.board.id}>
+                            <H2>{board.board.title}</H2>
+                        </LinkToBoard>
+                        <DisplayUserLevel>{board.role}</DisplayUserLevel>
+                    </BoardCard>
                 ))}
-            </div>
+            </BoardAllCards>
         </div>
     );
+
 };
 
 export default Home;

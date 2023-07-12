@@ -1,13 +1,15 @@
 import { Body, ResponseType, getClient } from "@tauri-apps/api/http";
 import { TicketInfo } from "../data/ticket";
 
-export const createTicket = (token: string,columnId:number, text: string, expiration_date: Date): Promise<Boolean> => {
+export const createTicket = (token: string,columnId:number,title:string, text: string, expiration_date: String, position:number): Promise<Boolean> => {
 	return new Promise(async (resolve) => {
 		const client = await getClient();
 		client
 			.post<Boolean>(`http://127.0.0.1:8000/api/ticket/${columnId}`,
 				Body.json({
+					position:position,
 					text: text,
+					title: title,
                     expiration_date: expiration_date
 				}), {
 				timeout: 30,
@@ -16,6 +18,7 @@ export const createTicket = (token: string,columnId:number, text: string, expira
 			})
 			.then((res) => {
 				console.log(res.status)
+				console.log(res.data)
 				if (res.status == 201) {
 					resolve(true)
 				} else {
@@ -25,7 +28,7 @@ export const createTicket = (token: string,columnId:number, text: string, expira
 	})
 }
 
-export const editTicket = (token: string, id: string, field: Partial<{text: string, expiration_date: Date, columnReference: number}>): Promise<Boolean> => {
+export const editTicket = (token: string, id: string, field: Partial<{text: string, position: number, expiration_date: Date, columnReference: number}>): Promise<Boolean> => {
 	return new Promise(async (resolve) => {
 		const client = await getClient();
 		client
