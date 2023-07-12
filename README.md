@@ -148,4 +148,6 @@ Et voilà vous savez utiliser les styled components. Pour en savoir plus rendez-
 
 Concernant cette librairie, elle permet de faire du "drag and drop" de card. Elle fonctionne comme ceci ![](image.png)
 
+Le composant DragDropContext est le contexte de drag and drop, cela permet d'initialiser la zone de drag and drop. Le composant Droppable est quand à lui la colonne ou toutes les cards seront déplaçable. Le composant Draggable sont quand à elle les cards qui seront déplaçable. Vous pouvez ainsi monter vos composants (comme par exemple les styled componants vu juste au-dessus) à l'intérieur de ces composants-ci afin de faire une interface. Concernant toutes les spécificités, je vous invite à aller regarder la doc car ce package est assez complexe à mettre en oeuvre et très complet https://www.npmjs.com/package/react-beautiful-dnd
+
 __Attention :__ Á l'heure ou j'écris ceci la librairie n'est pas compatible avec le strict-mode de React et cela rend le package inutilisable avec celui-ci d'activé.
