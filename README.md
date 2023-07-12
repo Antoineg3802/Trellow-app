@@ -1,4 +1,4 @@
-# Tauri
+![Tauri Logo](https://d33wubrfki0l68.cloudfront.net/4112b407ce93d899a0e499bbefa9fc172b11685e/9077b/fr/meta/tauri_logo_dark.svg)
 
 Tauri est une boîte à outils qui aide les développeurs à créer des applications pour les principales plates-formes de bureau, en utilisant pratiquement n'importe quel framework frontal existant. Le noyau est construit avec Rust et le CLI exploite Node.js, faisant de Tauri une approche véritablement polyglotte pour créer et maintenir de superbes applications. [Source](https://tauri.app/fr/about/intro/)
 
